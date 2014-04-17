@@ -1,6 +1,6 @@
 cms_utilities_project
 =====================
 
-utility scripts for CMS
+utility scripts for Content Management System
 
-Needs: Wordpress CMS, Twitter Bootstrap (Font Awesome)
+Needs: Wordpress Content Management System, Twitter Bootstrap (Font Awesome)
