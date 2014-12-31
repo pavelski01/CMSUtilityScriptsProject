@@ -55,15 +55,22 @@ function anchoredCurrentAffairs() {
 	var spanElement1 = document.createElement("span");
 	spanElement1.style.fontWeight = "bold";
 	spanElement1.innerHTML = "Kliknij, aby powiększyć";
-	aElement.appendChild( imgElement );
-	aElement.appendChild( spanElement1 );
+	var iframeElement = document.createElement("iframe");
+	iframeElement.frameborder = "0";
+	iframeElement.height = "200px";
+	iframeElement.src = "";
+	iframeElement.width = "300px";
+	iframeElement.style.margin = "20px auto 20px auto";
+	aElement.appendChild(imgElement);
+	aElement.appendChild(spanElement1);
 	var divElement = document.createElement("div");
-	divElement.appendChild( spanElement0 );
-	divElement.appendChild( aElement );
+	divElement.appendChild(spanElement0);
+	divElement.appendChild(aElement);
+	divElement.appendChild(iframeElement);
 	divElement.style.margin = "0 auto 15px auto";
 	divElement.style.textAlign = "center";
 	divElement.style.margin = "0 0 45px 0";
-	document.getElementById("sidebar").appendChild( divElement );
+	document.getElementById("sidebar").appendChild(divElement);
 }
 
 function carousel(URLarray) {
@@ -72,7 +79,7 @@ function carousel(URLarray) {
 	divElement0.className = "carousel slide";
 	var ulElement = document.createElement("ul");
 	ulElement.style.display = "none";
-	for (var counter = 0; counter < URLarray.length; counter++)	{
+	for (var counter = 0; counter < URLarray.length; counter++) {
 		var liElement = document.createElement("li");
 		liElement.setAttribute("data-target", "#carousel");
 		liElement.setAttribute("data-slide-to", counter.toString());
@@ -81,11 +88,11 @@ function carousel(URLarray) {
 	}
 	var divElement1 = document.createElement("div");
 	divElement1.className = "carousel-inner";
-	var randomValue = Math.floor( Math.random() * URLarray.length );
+	var randomValue = Math.floor(Math.random() * URLarray.length);
 	var pElement;
 	var aElement0;
 	var imgElement;
-	for (var counter = 0; counter < URLarray.length; counter++)	{
+	for (var counter = 0; counter < URLarray.length; counter++) {
 		var divElement2 = document.createElement("div");
 		divElement2.className = "item";
 		if (counter == randomValue) divElement2.className += " active";
@@ -97,10 +104,10 @@ function carousel(URLarray) {
 		imgElement.style.height = "280px";
 		imgElement.style.width = "700px";
 		imgElement.style.borderRadius = "5px";
-		aElement0.appendChild( imgElement );
-		pElement.appendChild( aElement0 );
-		divElement2.appendChild( pElement );
-		divElement1.appendChild( divElement2 );
+		aElement0.appendChild(imgElement);
+		pElement.appendChild(aElement0);
+		divElement2.appendChild(pElement);
+		divElement1.appendChild(divElement2);
 	}
 	var aElement1 = document.createElement("a");
 	var aElement2 = document.createElement("a");
@@ -112,16 +119,16 @@ function carousel(URLarray) {
 	aElement2.setAttribute("data-slide", "next");
 	aElement1.innerHTML = "<i class=\"icon-caret-left icon-small\" style=\"font-size: 40px; font-weight: bold;\"></i>";
 	aElement2.innerHTML = "<i class=\"icon-caret-right icon-small\" style=\"font-size: 40px; font-weight: bold;\"></i>";
-	divElement0.appendChild( ulElement );
-	divElement0.appendChild( divElement1 );
-	divElement0.appendChild( aElement1 );
-	divElement0.appendChild( aElement2 );
+	divElement0.appendChild(ulElement);
+	divElement0.appendChild(divElement1);
+	divElement0.appendChild(aElement1);
+	divElement0.appendChild(aElement2);
 	divElement0.style.zIndex = "3";
 	return divElement0;
 }
 
 function start() {
-	anchoredCarousel( carousel( URLarray() ) );
+	anchoredCarousel(carousel(URLarray()));
 	anchoredActualization();
 	anchoredCurrentAffairs();
 }
