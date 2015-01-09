@@ -1,5 +1,5 @@
-CMSUtilityScriptsProject
-=====================
+CMSutilityScriptsProject
+========================
 
 Description: Utility scripts for Content Management System
 
