@@ -1,4 +1,4 @@
-CMSutilityScriptsProject
+CmsUtilityScriptsProject
 ========================
 
 Description: Utility scripts for Content Management System
